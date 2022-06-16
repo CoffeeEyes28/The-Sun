@@ -9,7 +9,7 @@ sun platformer
 - sun can move and jump 
 		in order to platform home
 		
-- bomb boxes and other hazards 
+- avoid bomb boxes and other hazards 
 
 ]]--
 
@@ -151,10 +151,10 @@ function plyr_update()
 		
 		
 		--jump
-		if btnp(❎)
-			and plyr.landed then
-			plyr.dy-=plyr.boost
-			plyr.landed=false
+		if btnp(❎)	and 
+				plyr.landed then
+			 plyr.dy-=plyr.boost
+			 plyr.landed=false 
 		end	
 			
 			--up and down
@@ -165,7 +165,8 @@ function plyr_update()
 				plyr.jumping=false
 			end
 			
-			if map_collide(plyr,"down",0) then
+			if plyr.dy>0 and
+					 map_collide(plyr,"down",0) then
 						plyr.landed=true
 						plyr.falling=false
 						plyr.dy=0			
@@ -173,7 +174,7 @@ function plyr_update()
 						 		
 	elseif plyr.dy<0 then
 					plyr.jumping=true
-					if map_collide(plyr,"up",1) then
+					if map_collide(plyr,"up",0) then
 					plyr.dy=0
 			
 			end
