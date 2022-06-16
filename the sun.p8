@@ -68,6 +68,8 @@ function _draw()
 					plyr.h/8,
 					plyr.flp
 						)
+		print ("dx = "..plyr.dx)
+		print ("dy = "..plyr.dy)
 end
 
 
