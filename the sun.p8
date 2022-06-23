@@ -153,7 +153,7 @@ function plyr_update()
 			plyr.dx-=plyr.acc
 			plyr.moving=true
 			plyr.flp=true
-			sfx(03)
+			--sfx(03)
 		end
 		
 		
@@ -161,7 +161,7 @@ function plyr_update()
 			plyr.dx+=plyr.acc
 			plyr.moving=true
 			plyr.flp=false
-			sfx(03)
+		--	sfx(03)
 		end
 		
 		--slide
@@ -254,7 +254,7 @@ end
 									plyr.sp=18
 		elseif plyr.moving then
 									plyr.sp=9
-		elseif plyr.moving and plyr.jumping then
+		elseif plyr.jumping and plyr.moving then
 									plyr.sp=5
 			
 				
